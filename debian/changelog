@@ -1,0 +1,345 @@
+pugixml (1.11.4-1) unstable; urgency=medium
+
+  * Team upload (salsa.d.o/debian namespace)
+  * New upstream version 1.11.4
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 23 Dec 2020 08:27:40 +0100
+
+pugixml (1.11.3-1) unstable; urgency=medium
+
+  * Team upload (salsa.d.o/debian namespace)
+  * New upstream version 1.11.3
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 19 Dec 2020 23:16:32 +0100
+
+pugixml (1.11.2-1) unstable; urgency=medium
+
+  * Team upload (salsa.d.o/debian namespace)
+  * New upstream version 1.11.2
+  * Update SymbolsHelper-Confirmed for new version (Closes: #977602)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 18 Dec 2020 09:43:06 +0100
+
+pugixml (1.11-1) unstable; urgency=medium
+
+  * Team upload (salsa.d.o/debian namespace)
+  * New upstream version 1.11
+  * Update symbols for new release
+  * Refresh privacy patch
+  * Drop two patches now upstream
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 04 Dec 2020 19:40:40 +0100
+
+pugixml (1.10-2) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Team upload (salsa.d.o/debian namespace)
+
+  [ Debian Janitor ]
+  * Wrap long lines in changelog entries: 1.10-1.
+  * Set upstream metadata fields: Bug-Submit.
+
+  [ Helmut Grohne ]
+  * Multiarchify -dev and -doc. (Closes: #970683)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 12 Nov 2020 12:26:45 +0100
+
+pugixml (1.10-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Repository, Repository-
+    Browse.
+
+  [ Gianfranco Costamagna ]
+  * Team upload (salsa.d.o/debian namespace)
+  * Bump copyright years
+  * New upstream version 1.10
+  * Disable patches now addressed upstream:
+    - 2001-enable_staticlib_generation.patch
+    - 2003-static_link_tests.patch
+    - 2004-do_not_install_includes_in_versioned_dir.patch
+    - disable-failing-test.patch
+  * Refresh privacy patch
+  * Bump std-version to 4.5.0, no changes required
+  * Adapt grep to find new VERSION instead of SOVERSION
+    (the latter is derived from PROJECT_VERSION, set with project keyword)
+  * Add patch to make sure the output is correctly called
+  * Don't move pkgconfig files anymore, they are ship in the correct location
+    now
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 07 Feb 2020 11:36:49 +0100
+
+pugixml (1.9-3) unstable; urgency=medium
+
+  * Team upload
+  * Fixup dev package creation, cmake was put in wrong place
+    (Closes: #929792)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 31 May 2019 13:00:23 +0200
+
+pugixml (1.9-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Disable new test that fails on buildd, but not on local
+    sbuild/pbuilder, maybe some restrictions in builders configuration
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 30 Jul 2018 12:15:48 +0200
+
+pugixml (1.9-1exp1) experimental; urgency=medium
+
+  * Team upload
+  * Refresh symbols file
+  * Upload to experimental with some debugging code
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 30 Jul 2018 09:40:16 +0200
+
+pugixml (1.9-1) unstable; urgency=medium
+
+  * Team upload
+  * Move vcs to salsa.d.o
+  * Bump std-version to 4.1.5, no changes required
+  * New upstream release (Closes: #904803)
+  * Patch refresh
+  * Update copyright file
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 28 Jul 2018 09:07:01 +0200
+
+pugixml (1.8.1-7) unstable; urgency=medium
+
+  * Fix FTCBFS: Closes: #-1, Thanks to Helmut Grohne.
+    + Honour DEB_BUILD_OPTIONS=nocheck.
+    + Always use a multiarch install layout.
+  * Mark package compliance with Debian Policy 4.1.1.
+
+ -- Vasudev Kamath <vasudev@copyninja.info>  Wed, 01 Nov 2017 10:48:54 +0530
+
+pugixml (1.8.1-6) unstable; urgency=medium
+
+  * Drop multi-arch tag for now from libpugixml-dev.
+    Closes: bug#874243. Thanks to Helmut Grohne.
+
+ -- Vasudev Kamath <vasudev@copyninja.info>  Fri, 15 Sep 2017 20:49:03 +0530
+
+pugixml (1.8.1-5) unstable; urgency=medium
+
+  * Fix revive symbols seemingly wrongly dropped since 1.7-1.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 18 Aug 2017 15:37:07 +0200
+
+pugixml (1.8.1-4) unstable; urgency=medium
+
+  * Tighten major version resolving used for our packaging.
+  * Update git-buildpackage config: Filter any .gitignore file.
+  * Modernize Vcs-* fields: Use git (not cgit) in path.
+  * Declare compliance with Debian Policy 4.0.1.
+  * Advertise DEP3 format in patch headers.
+  * Fix mark patch 2002 as not needing upstreaming.
+  * Drop obsolete lintian override regarding debhelper 9.
+  * Tighten experimental release resolving used for our packaging.
+  * Fix use pkg-kde-tools symbolshelper.
+  * Use d-shlibs (not dh-exec) to install pkgconfig.
+    Stop build-depend on dh-exec.
+  * Fix avoid using only upstream version for dpkg-gensymbols: A patch
+    may affect symbols.
+  * Update copyright info: Extend coverage for myself.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 18 Aug 2017 14:27:31 +0200
+
+pugixml (1.8.1-3) unstable; urgency=medium
+
+  * Fix the Vcs-Git URL.
+    Closes: bug#868010. Thanks to Kunal Mehta.
+  * Fix the install path for pkgconfig file.
+    Closes: bug#849810. Thanks to Kunal Mehta.
+  * debian/control:
+    + Mark package as compliant with Debian Policy 4.0.0.
+    + Drop -dbg package in favor of automatically generated -dbgsym
+      package.
+  * debian/rules:
+    + Add dh_strip argument --dbgsym-migration to allow clean migration
+      from libpugixml1v5-dbg to libpugixml1v5-dbgsym.
+  * Fix the typo  in source lintian override.
+
+ -- Vasudev Kamath <vasudev@copyninja.info>  Sat, 15 Jul 2017 13:44:10 +0530
+
+pugixml (1.8.1-2) unstable; urgency=medium
+
+  * Update symbol file for all architecture (except m68k and sh4).
+
+ -- Vasudev Kamath <vasudev@copyninja.info>  Wed, 21 Jun 2017 20:19:26 +0530
+
+pugixml (1.8.1-1) unstable; urgency=medium
+
+  * Import new upstream version 1.8.
+  * debian/rules:
+    + Drop upstream-tarball.mk snippets in favor of debian/watch.
+    + Update location of CMakeLists.txt for capturing SOVERSION.
+    + Relax symbol file generation on experimental.
+    + Enable tests and pkg-config file generation.
+    + Build depend on dh-exec for installing pkg-config files to
+      multi-arch path.
+    + Install upstream shipped cmake files.
+  * debian/patches:
+    + Refresh patches 2001 and 2002 with new upstream release.
+    + Introduce patch 2003 to link test binary with static library to
+      avoid FTBFS.
+    + Introduce patch 2004 to avoid installing into version suffixed
+      directory.
+  * Update copyright info:
+    + Extend copyright period for upstream.
+    + Extend copyright period for myself on Debian folder.
+  * Add copyright-check maintainer script to the source and drop build
+    time copyright check.
+  * debian/control:
+    + Update my email address in maintainer field.
+    + Mark package compliance with Debian policy 3.9.8.
+    + Use secure URL for Vcs-* fields.
+  * Update symbols file for 1.8.1 for i386 architecture.
+
+ -- Vasudev Kamath <vasudev@copyninja.info>  Sun, 18 Jun 2017 11:01:32 +0530
+
+pugixml (1.7-2) unstable; urgency=medium
+
+  * Update symbols file to include all architecture.
+
+ -- Vasudev Kamath <kamathvasudev@gmail.com>  Fri, 06 Nov 2015 22:44:36 +0530
+
+pugixml (1.7-1) unstable; urgency=medium
+
+  * New upstream release.
+    + Introduced a new compact tree storage mode that takes significantly
+      less memory (2-5x smaller DOM) at some performance cost.
+    + New integer parsing/formatting implementation (3-5x faster at
+      getting/setting integers).
+    + Added format_indent_attributes that makes the resulting XML
+      friendlier to line diff/merge tools.
+    + Fix Clang 3.7 crashes in out-of-memory cases (C++ DR 1748)
+  * Refresh patch 2001 and 2002 for new release.
+  * Update symbols file for new release.
+
+ -- Vasudev Kamath <kamathvasudev@gmail.com>  Sun, 01 Nov 2015 21:46:04 +0530
+
+pugixml (1.6-2) unstable; urgency=medium
+
+  * Update package name in symbols file
+
+ -- Vasudev Kamath <kamathvasudev@gmail.com>  Thu, 08 Oct 2015 20:23:59 +0530
+
+pugixml (1.6-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Fix translate and normalize-space XPath functions to no longer
+      return internal NUL characters.
+    + Fix buffer overrun on malformed comments inside DOCTYPE sections.
+    + Have attribute/text values use more digits when printing floating
+      point numbers to guarantee round-tripping.
+
+  [ Vasudev Kamath ]
+  * Drop doc/manual folder no longer shipped upstream.
+  * Re-add symbols file, accidentally dropped in gcc v5 transition.
+  * Refresh patch 2001 with new upstream changes.
+  * Add patch 2002 to avoid linking to external data in documentation
+    (potential privacy issue).
+  * Update copyright info:
+    + Extend coverage for upstream author.
+    + Drop copyright statement for docs/pugixml.css.
+    + Extend coverage for myself.
+    + Extend coverage for Jonas.
+
+  [ Jonas Smedegaard ]
+  * Fix bump DEP3 Last-Update header for patch 2001.
+  * Update copyright info:
+    + Drop unused License section BSL-1.0.
+    + Rewrap Licenses at 72 chars.
+    + Fix source URL, and add alternate git source URL.
+    + Bump packaging license to GPL-3+.
+    + Fix coverage for myself to exclude 2014.
+    + Add copyright and licensing boilerplate to rules file (based on
+      copyright file info, making the latter fully reflective).
+  * Modernize CDBS handling:
+    + Unconditionally include snippet upstream-tarball.mk and stop
+      suppress optional build-dependencies: All satisfied even in
+      oldstable.
+    + Drop obsolete multiarch quirks.
+  * Update package relations:
+    + Fix tighten build-dependency on d-shlibs: Needed for v5 option.
+    + Build-depend on dh-buildinfo.
+    + Relax build-dependency on debhelper: Needed version satisfied even
+      in oldstable.
+  * Exclude .la files with d-shlibs (not custom rules targets).
+  * Fix track tagged releases (not different "released" ones).
+  * Simplify watch file.
+  * Modernize git-buildpackage config: Avoid git- prefix.
+  * Resolve stem from packaging, and major from source (not packaging).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 06 Oct 2015 17:38:33 +0200
+
+pugixml (1.4-3) unstable; urgency=medium
+
+  * Re-release to unstable.
+    Still closes: bug#791250.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 17 Aug 2015 14:58:59 +0200
+
+pugixml (1.4-2) experimental; urgency=medium
+
+  [ Andreas Tille ]
+  * Declare compliance with Debian Policy 3.9.6.
+  * gcc-5 transition.
+    Closes: bug#791250.
+
+  [ Jonas Smedegaard ]
+  * Update copyright info:
+    + Extend coverage for main upstream author to include current year.
+    + Merge same-author same-license Files sections.
+    + Use License-Grant and License-Reference fields. Thanks to Ben Finney.
+  * Override lintian regarding license in License-Reference field.
+    See bug#786450.
+  * Override lintian regarding build-depending unversioned on debhelper.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 17 Aug 2015 11:21:16 +0200
+
+pugixml (1.4-1) unstable; urgency=medium
+
+  * Use github URL in watch file, code.google.com stopped providing
+    download features.
+  * Use github URL for DEB_UPSTREAM_URL and update md5sum for new release.
+  * Imported Upstream version 1.4
+    Closes: bug#762260, Thanks to Ghislain Antony Vaillant.
+  * Refreshed patch 01-enable_staticlib_generation.patch and renamed it as
+    per guidelines in patches/README file.
+  * Regenerated symbols file using pkgkde-symbols-helper.
+  * Introduced pkg-kde-symbols tools as build-dependency.
+  * Bump Standards-Version to 3.9.5, no change required to package source.
+  * Use canonical anonscm.debian.org for Vcs-Git field.
+  * Use cgit URL for Vcs-Browser field.
+  * Bump compat to 9 to handle multi-arch debug symbols, debhelper
+    dependency is now >=9.
+  * Mark the -dbg package as multi-arch same.
+
+ -- Vasudev Kamath <kamathvasudev@gmail.com>  Sun, 21 Sep 2014 22:09:39 +0530
+
+pugixml (1.2-2) unstable; urgency=low
+
+  [ Vasudev Kamath ]
+  * Fix c++-demangle architecture-dependent symbols in symbols file.
+    Closes: bug#704718.
+  * debian/rules:
+    + Pass -v$(DEB_UPSTREAM_VERSION) to dpkg-gensymbols to avoid it
+      taking debian version while reconstructing symbols file.
+
+  [ Jonas Smedegaard ]
+  * Add README.source emphasizing control.in file as *not* a
+    show-stopper for contributions, referring to wiki page for details.
+  * Skip copyright-checking some images.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 01 Jul 2013 02:48:14 +0200
+
+pugixml (1.2-1) unstable; urgency=low
+
+  [ Vasudev Kamath ]
+  * Initial packaging.
+    Closes: bug#697520
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 13 Jan 2013 18:47:10 +0100

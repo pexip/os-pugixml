@@ -1,0 +1,34 @@
+Description: Drop privacy breaching information from docs
+ Documentation have link to fonts.googleapis.com to get beautification
+ elements i.e. CSS and fonts. This results in fetching of remote data
+ without user consent. Since the element only involved additional
+ beautification its dropped instead of providing replacement.
+Author: Vasudev Kamath <kamathvasudev@gmail.com>
+Forwarded: not-needed
+Last-Update: 2020-12-04
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: pugixml/docs/manual.html
+===================================================================
+--- pugixml.orig/docs/manual.html
++++ pugixml/docs/manual.html
+@@ -7,7 +7,6 @@
+ <meta name="generator" content="Asciidoctor 2.0.10">
+ <meta name="author" content="website, repository">
+ <title>pugixml 1.11 manual</title>
+-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+ <style>
+ /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ /* Uncomment @import statement to use as custom stylesheet */
+Index: pugixml/docs/quickstart.html
+===================================================================
+--- pugixml.orig/docs/quickstart.html
++++ pugixml/docs/quickstart.html
+@@ -7,7 +7,6 @@
+ <meta name="generator" content="Asciidoctor 2.0.10">
+ <meta name="author" content="website, repository">
+ <title>pugixml 1.11 quick start guide</title>
+-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+ <style>
+ /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ /* Uncomment @import statement to use as custom stylesheet */
