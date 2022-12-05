@@ -13,22 +13,22 @@ Index: pugixml/docs/manual.html
 --- pugixml.orig/docs/manual.html
 +++ pugixml/docs/manual.html
 @@ -7,7 +7,6 @@
- <meta name="generator" content="Asciidoctor 2.0.10">
+ <meta name="generator" content="Asciidoctor 2.0.16">
  <meta name="author" content="website, repository">
- <title>pugixml 1.11 manual</title>
+ <title>pugixml 1.13 manual</title>
 -<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
  <style>
- /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
- /* Uncomment @import statement to use as custom stylesheet */
+ /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ /* Uncomment the following line when using as a custom stylesheet */
 Index: pugixml/docs/quickstart.html
 ===================================================================
 --- pugixml.orig/docs/quickstart.html
 +++ pugixml/docs/quickstart.html
 @@ -7,7 +7,6 @@
- <meta name="generator" content="Asciidoctor 2.0.10">
+ <meta name="generator" content="Asciidoctor 2.0.16">
  <meta name="author" content="website, repository">
- <title>pugixml 1.11 quick start guide</title>
+ <title>pugixml 1.13 quick start guide</title>
 -<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
  <style>
- /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
- /* Uncomment @import statement to use as custom stylesheet */
+ /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ /* Uncomment the following line when using as a custom stylesheet */

@@ -1,3 +1,50 @@
+pugixml (1.13-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update symbols (Closes: #1015595)
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Mon, 05 Dec 2022 20:21:58 +0100
+
+pugixml (1.13-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Security-Contact.
+  * Drop unused build-dependency on cdbs.
+
+  [ Jochen Sprickerhof ]
+  * New upstream version 1.13
+  * Rebase patches
+  * Bump policy version (no changes)
+  * Move package description to source package
+  * Fix pkgkde-symbolshelper
+  * Add new symbols
+  * Drop unused lintian-overrides
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Mon, 05 Dec 2022 12:55:07 +0100
+
+pugixml (1.12.1-1) unstable; urgency=medium
+
+  [ Jonas Smedegaard ]
+  * remove myself as uploader
+
+  [ Gianfranco Costamagna ]
+  * Convert to debhelper compat level 13
+  * Fixup syntax for new cmake variables
+  * Add R^3: no
+  * Fix watch file and upgrade to v4
+  * Bump std-version to 4.6.0
+  * New upstream version 1.12.1
+  * Patch refresh
+  * Update copyright years
+  * Drop dbgsym migration
+  * Drop duplicated section in control file
+  * Drop dbgsym migration code, useless now
+  * Update copyright file
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 23 Feb 2022 10:07:27 +0100
+
 pugixml (1.11.4-1) unstable; urgency=medium
 
   * Team upload (salsa.d.o/debian namespace)

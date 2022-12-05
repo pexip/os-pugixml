@@ -1,93 +1,13 @@
 #!/usr/bin/make -f
-# -*- mode: makefile; coding: utf-8 -*-
-# Copyright © 2013, 2015, 2017 Jonas Smedegaard <dr@jones.dk>
-# Copyright © 2013-2015 Vasudev Kamath <kamathvasudev@gmail.com>
-# Description: Main Debian packaging script for pugixml
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 3, or (at your option)
-# any later version.
-#
-# This program is distributed in the hope that it will be useful, but
-# WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# This needs to declared/run before including CDBS snippets
-stem = $(DEB_SOURCE_PACKAGE)
-major := $(shell grep -Po '\bpugixml VERSION +\K\d+' CMakeLists.txt)
-lib = lib$(stem)
-# TODO: drop v5 suffix when major version > 1
-pkg-lib = lib$(stem)$(major)v5
-debian/control:: debian/control.in
-DEB_PHONY_RULES += debina/control.in
-debian/control.in::
-	sed \
-		-e 's/__PKG-LIB__/$(pkg-lib)/g' \
-		<debian/control.in.in \
-		>debian/control.in
-
-include /usr/share/dpkg/architecture.mk
-include /usr/share/cdbs/1/class/cmake.mk
-include /usr/share/cdbs/1/rules/debhelper.mk
-
-pkg-dev = lib$(stem)-dev
-pkg-doc = $(stem)-doc
-pkg-dbg = $(pkg-lib)-dbg
-
-# resolve experimental release
-EXP_RELEASE = $(filter experimental% UNRELEASED,$(DEB_SUITE))
-
-# relax symbols check when targeting experimental
-export DPKG_GENSYMBOLS_CHECK_LEVEL=$(if $(EXP_RELEASE),0,1)
+%:
+	dh $@ --buildsystem=cmake
 
 # Build the shared library
-DEB_CMAKE_EXTRA_FLAGS += -DCMAKE_INSTALL_LIBDIR=lib/$(DEB_HOST_MULTIARCH) -DBUILD_SHARED_AND_STATIC_LIBS=ON -DUSE_VERSIONED_LIBDIR=OFF
+DEB_CMAKE_EXTRA_FLAGS += -DCMAKE_INSTALL_LIBDIR=lib/$(DEB_HOST_MULTIARCH) -DBUILD_SHARED_LIBS=ON -DPUGIXML_BUILD_SHARED_AND_STATIC_LIBS=ON -DPUGIXML_USE_VERSIONED_LIBDIR=OFF
 ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
-DEB_CMAKE_EXTRA_FLAGS += -DBUILD_TESTS=1
+DEB_CMAKE_EXTRA_FLAGS += -DPUGIXML_BUILD_TESTS=1
 endif
 
-# We need this to build the package
-CDBS_BUILD_DEPENDS +=, cmake
-
-# Docs installation
-DEB_INSTALL_DOCS_$(pkg-doc) += docs/images docs/manual.html docs/quickstart.html
-
-# Install examples
-DEB_INSTALL_EXAMPLES_$(pkg-dev) += docs/samples
-
-# Drop -dbg package in favor of auto generated -dbgsym
-DEB_DH_STRIP_ARGS = --dbgsym-migration="$(pkg-lib)-dbg (<< 1.8.1-3~)"
-
-# Let d-shlibs calculate development package dependencies
-#  and handle shared library install
-#  * Recent version needed for v5 option
-# TODO: drop v5 option when major version > 1
-CDBS_BUILD_DEPENDS +=, d-shlibs (>= 0.61~)
-binary-post-install/$(pkg-lib) binary-post-install/$(pkg-dev):: \
- debian/stamp-local-shlibs-$(lib)
-debian/stamp-local-shlibs-$(lib): \
- binary-install/$(pkg-lib) binary-install/$(pkg-dev)
-	d-shlibmove --commit \
-		--devunversioned \
-		--exclude-la \
-		--multiarch \
-		--v5 \
-		--override s/$(lib)$(major)-dev/$(lib)-dev/ \
-		--movedev "debian/tmp/usr/include/*" usr/include/ \
-		--movedev "debian/tmp/usr/lib/*/cmake/pugixml/*" \
-			/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/pugixml \
-		--movedev "debian/tmp/usr/lib/*/pkgconfig/*" \
-			/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig \
-		debian/tmp/usr/lib/*/$(lib).so
-		touch $@
-clean::
-	rm -f debian/stamp-local-shlibs-$(lib)
-
-# track symbols using pkgkde-symbolshelper
-CDBS_BUILD_DEPENDS +=, pkg-kde-tools
-include /usr/share/pkg-kde-tools/makefiles/1/cdbs/symbolshelper.mk
+override_dh_auto_configure:
+	dh_auto_configure -- $(DEB_CMAKE_EXTRA_FLAGS)
