@@ -1,5 +1,6 @@
 # SymbolsHelper-Confirmed: 1.11.2-1 amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x
 libpugixml.so.1 libpugixml1v5 #MINVER#
+* Build-Depends-Package: libpugixml-dev
  _ZN4pugi10xpath_nodeC1ERKNS_13xml_attributeERKNS_8xml_nodeE@Base 1.4
  _ZN4pugi10xpath_nodeC1ERKNS_8xml_nodeE@Base 1.4
  _ZN4pugi10xpath_nodeC1Ev@Base 1.4
@@ -40,6 +41,8 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  _ZN4pugi12xml_documentaSEOS0_@Base 1.9
  _ZN4pugi13xml_attribute8set_nameEPKc@Base 1.4
  _ZN4pugi13xml_attribute9set_valueEPKc@Base 1.4
+ (arch-bits=32)_ZN4pugi13xml_attribute9set_valueEPKcj@Base 1.13
+ (arch-bits=64)_ZN4pugi13xml_attribute9set_valueEPKcm@Base 1.13
  _ZN4pugi13xml_attribute9set_valueEb@Base 1.4
  _ZN4pugi13xml_attribute9set_valueEd@Base 1.4
  _ZN4pugi13xml_attribute9set_valueEdi@Base 1.11
@@ -99,14 +102,14 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  (subst)_ZN4pugi15xml_writer_file5writeEPKv{size_t}@Base 1.6
  _ZN4pugi15xml_writer_fileC1EPv@Base 1.4
  _ZN4pugi15xml_writer_fileC2EPv@Base 1.4
- _ZN4pugi15xml_writer_fileD0Ev@Base 1.4
- _ZN4pugi15xml_writer_fileD1Ev@Base 1.4
- _ZN4pugi15xml_writer_fileD2Ev@Base 1.4
+ (optional=lto)_ZN4pugi15xml_writer_fileD0Ev@Base 1.4
+ (optional=lto)_ZN4pugi15xml_writer_fileD1Ev@Base 1.4
+ (optional=lto)_ZN4pugi15xml_writer_fileD2Ev@Base 1.4
  _ZN4pugi15xpath_exceptionC1ERKNS_18xpath_parse_resultE@Base 1.4
  _ZN4pugi15xpath_exceptionC2ERKNS_18xpath_parse_resultE@Base 1.4
- _ZN4pugi15xpath_exceptionD0Ev@Base 1.4
- _ZN4pugi15xpath_exceptionD1Ev@Base 1.4
- _ZN4pugi15xpath_exceptionD2Ev@Base 1.4
+ (optional=lto)_ZN4pugi15xpath_exceptionD0Ev@Base 1.4
+ (optional=lto)_ZN4pugi15xpath_exceptionD1Ev@Base 1.4
+ (optional=lto)_ZN4pugi15xpath_exceptionD2Ev@Base 1.4
  _ZN4pugi16xml_parse_resultC1Ev@Base 1.4
  _ZN4pugi16xml_parse_resultC2Ev@Base 1.4
  _ZN4pugi17xml_node_iteratorC1EPNS_15xml_node_structES2_@Base 1.4
@@ -124,9 +127,9 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  _ZN4pugi17xml_writer_streamC1ERSt13basic_ostreamIwSt11char_traitsIwEE@Base 1.4
  _ZN4pugi17xml_writer_streamC2ERSo@Base 1.4
  _ZN4pugi17xml_writer_streamC2ERSt13basic_ostreamIwSt11char_traitsIwEE@Base 1.4
- _ZN4pugi17xml_writer_streamD0Ev@Base 1.4
- _ZN4pugi17xml_writer_streamD1Ev@Base 1.4
- _ZN4pugi17xml_writer_streamD2Ev@Base 1.4
+ (optional=lto)_ZN4pugi17xml_writer_streamD0Ev@Base 1.4
+ (optional=lto)_ZN4pugi17xml_writer_streamD1Ev@Base 1.4
+ (optional=lto)_ZN4pugi17xml_writer_streamD2Ev@Base 1.4
  _ZN4pugi18xpath_parse_resultC1Ev@Base 1.4
  _ZN4pugi18xpath_parse_resultC2Ev@Base 1.4
  _ZN4pugi18xpath_variable_set3addEPKcNS_16xpath_value_typeE@Base 1.4
@@ -214,11 +217,15 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  _ZN4pugi8xml_node8set_nameEPKc@Base 1.4
  _ZN4pugi8xml_node8traverseERNS_15xml_tree_walkerE@Base 1.4
  _ZN4pugi8xml_node9set_valueEPKc@Base 1.4
+ (arch-bits=32)_ZN4pugi8xml_node9set_valueEPKcj@Base 1.13
+ (arch-bits=64)_ZN4pugi8xml_node9set_valueEPKcm@Base 1.13
  _ZN4pugi8xml_nodeC1EPNS_15xml_node_structE@Base 1.4
  _ZN4pugi8xml_nodeC1Ev@Base 1.4
  _ZN4pugi8xml_nodeC2EPNS_15xml_node_structE@Base 1.4
  _ZN4pugi8xml_nodeC2Ev@Base 1.4
  _ZN4pugi8xml_text3setEPKc@Base 1.4
+ (arch-bits=32)_ZN4pugi8xml_text3setEPKcj@Base 1.13
+ (arch-bits=64)_ZN4pugi8xml_text3setEPKcm@Base 1.13
  _ZN4pugi8xml_text3setEb@Base 1.4
  _ZN4pugi8xml_text3setEd@Base 1.4
  _ZN4pugi8xml_text3setEdi@Base 1.11

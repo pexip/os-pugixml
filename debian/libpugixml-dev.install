@@ -1,0 +1,5 @@
+usr/include
+usr/lib/*/cmake
+usr/lib/*/libpugixml.a
+usr/lib/*/libpugixml.so
+usr/lib/*/pkgconfig
