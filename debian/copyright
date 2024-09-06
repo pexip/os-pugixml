@@ -5,7 +5,7 @@ Source: https://github.com/zeux/pugixml
 
 Files: *
 Copyright:
-  2006-2022, Arseny Kapoulkine <arseny.kapoulkine@gmail.com>
+  2006-2023, Arseny Kapoulkine <arseny.kapoulkine@gmail.com>
 License: Expat
 
 Files: src/pugiconfig.hpp
@@ -20,6 +20,7 @@ Files: debian/*
 Copyright:
   2013-2017, Vasudev Kamath <kamathvasudev@gmail.com>
   2013,2015-2017, Jonas Smedegaard <js@debian.org>
+  2020-2024, Gianfranco Costamagna <locutusofborg@debian.org>
 License: GPL-3+
 
 License: Expat

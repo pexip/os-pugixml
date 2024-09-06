@@ -1,6 +1,9 @@
 # SymbolsHelper-Confirmed: 1.11.2-1 amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x
 libpugixml.so.1 libpugixml1v5 #MINVER#
 * Build-Depends-Package: libpugixml-dev
+ _ZN4pugi10xml_writerD0Ev@Base 1.14
+ _ZN4pugi10xml_writerD1Ev@Base 1.14
+ _ZN4pugi10xml_writerD2Ev@Base 1.14
  _ZN4pugi10xpath_nodeC1ERKNS_13xml_attributeERKNS_8xml_nodeE@Base 1.4
  _ZN4pugi10xpath_nodeC1ERKNS_8xml_nodeE@Base 1.4
  _ZN4pugi10xpath_nodeC1Ev@Base 1.4
@@ -40,6 +43,8 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  _ZN4pugi12xml_documentD2Ev@Base 1.4
  _ZN4pugi12xml_documentaSEOS0_@Base 1.9
  _ZN4pugi13xml_attribute8set_nameEPKc@Base 1.4
+ (arch-bits=32)_ZN4pugi13xml_attribute8set_nameEPKcj@Base 1.14
+ (arch-bits=64)_ZN4pugi13xml_attribute8set_nameEPKcm@Base 1.14
  _ZN4pugi13xml_attribute9set_valueEPKc@Base 1.4
  (arch-bits=32)_ZN4pugi13xml_attribute9set_valueEPKcj@Base 1.13
  (arch-bits=64)_ZN4pugi13xml_attribute9set_valueEPKcm@Base 1.13
@@ -215,6 +220,8 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  _ZN4pugi8xml_node22insert_attribute_afterEPKcRKNS_13xml_attributeE@Base 1.4
  _ZN4pugi8xml_node23insert_attribute_beforeEPKcRKNS_13xml_attributeE@Base 1.4
  _ZN4pugi8xml_node8set_nameEPKc@Base 1.4
+ (arch-bits=32)_ZN4pugi8xml_node8set_nameEPKcj@Base 1.14
+ (arch-bits=64)_ZN4pugi8xml_node8set_nameEPKcm@Base 1.14
  _ZN4pugi8xml_node8traverseERNS_15xml_tree_walkerE@Base 1.4
  _ZN4pugi8xml_node9set_valueEPKc@Base 1.4
  (arch-bits=32)_ZN4pugi8xml_node9set_valueEPKcj@Base 1.13
@@ -410,7 +417,7 @@ libpugixml.so.1 libpugixml1v5 #MINVER#
  _ZTSN4pugi15xml_writer_fileE@Base 1.4
  _ZTSN4pugi15xpath_exceptionE@Base 1.4
  _ZTSN4pugi17xml_writer_streamE@Base 1.4
-#MISSING: 1.6# _ZTVN4pugi10xml_writerE@Base 1.4
+ _ZTVN4pugi10xml_writerE@Base 1.14
  _ZTVN4pugi15xml_tree_walkerE@Base 1.4
  _ZTVN4pugi15xml_writer_fileE@Base 1.4
  _ZTVN4pugi15xpath_exceptionE@Base 1.4
