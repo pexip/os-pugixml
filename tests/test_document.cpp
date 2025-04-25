@@ -589,7 +589,7 @@ TEST(document_load_file_wide_out_of_memory)
 	CHECK(result.status == status_out_of_memory || result.status == status_file_not_found);
 }
 
-#if defined(__APPLE__)
+#if defined(__linux__) || defined(__APPLE__)
 TEST(document_load_file_special_folder)
 {
 	xml_document doc;
@@ -737,7 +737,7 @@ struct temp_file
 	{
 		static int index = 0;
 
-	#if __cplusplus >= 201103
+	#if __cplusplus >= 201103 || defined(__APPLE__) // Xcode 14 warns about use of sprintf in C++98 builds
 		snprintf(path, sizeof(path), "%stempfile%d", test_runner::_temp_path, index++);
 	#else
 		sprintf(path, "%stempfile%d", test_runner::_temp_path, index++);
