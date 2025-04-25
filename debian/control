@@ -20,7 +20,7 @@ Description: Light-weight C++ XML processing library
   * XPath 1.0 implementation for complex data-driven tree queries
   * Full Unicode support with Unicode interface variants and automatic
     encoding conversions.
-XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
+XS-Pexip-Upstream: http://deb.debian.org/debian/ trixie
 
 Package: libpugixml1v5
 Architecture: any
