@@ -1,3 +1,31 @@
+pugixml (1.14-2) unstable; urgency=medium
+
+  * Team upload
+  * Fixup symbols file for 32 bit archs
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 06 Sep 2024 09:23:48 +0200
+
+pugixml (1.14-1) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Bump std-version to 4.7.0
+  * Add myself to copyright, to please lintian
+
+  [ Aquila Macedo Costa <aquilamacedo@riseup.net> ]
+  * Team upload.
+  * Update symbols
+  * Add lintian override for source-is-missing false positive
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 05 Sep 2024 17:55:40 +0200
+
+pugixml (1.14-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version 1.14
+  * Update copyright years
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 03 Oct 2023 15:27:47 +0200
+
 pugixml (1.13-0.2+pexip24u3) pexip-bookworm; urgency=medium
 
   * New versioning scheme
