@@ -1,0 +1,27 @@
+From 4449693823c0892fdb159009b1fade508ddfcdac Mon Sep 17 00:00:00 2001
+From: Tulio Beloqui <tulio@pexip.com>
+Date: Thu, 19 Mar 2026 11:41:31 +0100
+Subject: [PATCH] Added relocatable prefix support in the pkgconfig file
+
+---
+ scripts/pugixml.pc.in | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/scripts/pugixml.pc.in b/scripts/pugixml.pc.in
+index 7958774..8802f73 100644
+--- a/scripts/pugixml.pc.in
++++ b/scripts/pugixml.pc.in
+@@ -1,7 +1,7 @@
+-prefix=@CMAKE_INSTALL_PREFIX@
++prefix=${pcfiledir}/../..
+ exec_prefix=${prefix}
+-includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@@INSTALL_SUFFIX@
+-libdir=@CMAKE_INSTALL_FULL_LIBDIR@@INSTALL_SUFFIX@
++includedir=${prefix}/include
++libdir=${prefix}/lib
+ 
+ Name: pugixml
+ Description: Light-weight, simple and fast XML parser for C++ with XPath support.
+-- 
+2.43.0
+
